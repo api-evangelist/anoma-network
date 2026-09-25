@@ -1,0 +1,6 @@
+generated: '2026-09-25'
+method: probed
+generator: harvest-llms.py
+source: https://forum.anoma.net/llms.txt
+bytes: 1755
+note: saved verbatim; the provider's own document

@@ -1,23 +1,98 @@
 aid: anoma-network
+
 name: Anoma Network
-description: 'Anoma Network is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://anoma.net/images/opengraph-v5.jpg
+
+description: Anoma Network is a decentralized operating system that enables developers to build, deploy, and manage applications across multiple
+  blockchain networks. It abstracts away blockchain complexity, offering private, easy-to-use tools and SDKs for creating interoperable, sovereign
+  applications. Anoma aims to empower a new generation of decentralized services with flexible, secure, and scalable infrastructure.
+
 url: https://raw.githubusercontent.com/api-evangelist/anoma-network/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-24'
+
 modified: '2026-09-24'
+
 tags:
-- Company
-apis: []
+- Blockchain
+- Decentralized
+- Operating System
+- SDK
+- Interoperability
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/anoma-network-rules.yml
+- type: JSONLD
+  url: json-ld/anoma-network-context.jsonld
+- type: Vocabulary
+  url: vocabulary/anoma-network-vocabulary.yml
+- type: DataModel
+  url: data-model/anoma-network-data-model.yml
+- type: Conformance
+  url: conformance/anoma-network-conformance.yml
+- type: LLMsTxt
+  url: llms/anoma-network-llms.txt
+- type: Hosts
+  url: hosts/anoma-network-hosts.yml
+- type: Vendors
+  url: vendors/anoma-network-vendors.yml
+- type: Roadmap
+  url: https://anoma.net/roadmap
+- type: GitHubOrganization
+  url: https://github.com/anoma
+- type: Blog
+  url: https://anoma.net/blog
+- type: GettingStarted
+  url: https://docs.anoma.net/getting-started
+- type: Documentation
+  url: https://docs.anoma.net/
+- type: DomainSecurity
+  url: security/anoma-network-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/anoma-network_stock/
+  url: https://anoma.net
+
+apis:
+- aid: anoma-network:anoma-network-api
+  name: Anoma Network API
+  description: 'Anoma Network API as documented publicly: 1 operations. Contract generated from the documentation by API Evangelist (2026-09-25);
+    not the provider''s own document.'
+  humanURL: https://docs.anoma.net/earn
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/anoma-network-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/anoma-network-get-vault-network-vaultid-quote-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Documentation pages are rendered via JavaScript and no machine‑readable OpenAPI, GraphQL or AsyncAPI files were found.
+  evidence:
+  - url: https://api.anoma.net/openapi.json
+    status: 404
+  - url: https://anoma.net/openapi.json
+    status: 404
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 15
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

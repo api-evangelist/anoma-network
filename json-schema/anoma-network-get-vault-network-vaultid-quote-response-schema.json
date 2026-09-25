@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/anoma-network/main/json-schema/anoma-network-get-vault-network-vaultid-quote-response-schema.json",
+  "title": "GetVaultNetworkVaultidQuoteResponse",
+  "x-generated": "2026-09-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/anoma-network-openapi-generated.yml#/components/schemas/GetVaultNetworkVaultidQuoteResponse",
+  "type": "object",
+  "properties": {
+    "vaultId": {
+      "type": "string",
+      "description": "Vault identifier"
+    },
+    "direction": {
+      "type": "string",
+      "description": "deposit or redeem"
+    },
+    "inputToken": {
+      "type": "string",
+      "description": "Address of the input token"
+    },
+    "outputToken": {
+      "type": "string",
+      "description": "Address of the output token"
+    },
+    "inputAmount": {
+      "type": "string",
+      "description": "Amount supplied in smallest unit"
+    },
+    "expectedOutput": {
+      "type": "string",
+      "description": "What the vault would return right now"
+    },
+    "minOutput": {
+      "type": "string",
+      "description": "Committed output amount, slightly below expectedOutput"
+    },
+    "calls": {
+      "type": "array",
+      "description": "EVM calls to execute, each with fields to, value, data"
+    }
+  }
+}

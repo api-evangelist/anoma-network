@@ -1,0 +1,91 @@
+openapi: 3.1.0
+info:
+  title: Anoma Network API
+  version: '2026-09-25'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-25: 1 operation(s) read from 1 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Anoma Network has published no machine-readable contract that
+    the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 1
+    pages-with-code: 0
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-25'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.anoma.net/earn
+paths:
+  /vault/{network}/{vaultid}/quote:
+    get:
+      operationId: get_vault_network_vaultid_quote
+      tags:
+      - Vault
+      summary: Quotes are built server-side
+      x-source: https://docs.anoma.net/earn
+      parameters:
+      - name: network
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: vaultid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: direction
+        in: query
+        required: true
+        schema:
+          type: string
+        description: direction is deposit or redeem
+      - name: amount
+        in: query
+        required: true
+        schema:
+          type: string
+        description: 'amount is in the input token’s smallest unit: the asset when depositing, shares when redeeming'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetVaultNetworkVaultidQuoteResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetVaultNetworkVaultidQuoteResponse:
+      type: object
+      properties:
+        vaultId:
+          type: string
+          description: Vault identifier
+        direction:
+          type: string
+          description: deposit or redeem
+        inputToken:
+          type: string
+          description: Address of the input token
+        outputToken:
+          type: string
+          description: Address of the output token
+        inputAmount:
+          type: string
+          description: Amount supplied in smallest unit
+        expectedOutput:
+          type: string
+          description: What the vault would return right now
+        minOutput:
+          type: string
+          description: Committed output amount, slightly below expectedOutput
+        calls:
+          type: array
+          description: EVM calls to execute, each with fields to, value, data
+tags:
+- name: Vault
