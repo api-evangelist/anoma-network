@@ -69,18 +69,17 @@ common:
   url: https://anoma.net
 
 apis:
-- aid: anoma-network:anoma-network-api
-  name: Anoma Network API
-  description: 'Anoma Network API as documented publicly: 1 operations. Contract generated from the documentation by API Evangelist (2026-09-25);
-    not the provider''s own document.'
+- aid: anoma-network:anoma-network-vault-api
+  name: Anoma Network Vault API
+  description: The Vault API from Anoma Network — 1 operation(s) for vault.
   humanURL: https://docs.anoma.net/earn
+  tags:
+  - Vault
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/anoma-network-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/anoma-network-vault-api-openapi.yml
   - type: JSONSchema
     url: json-schema/anoma-network-get-vault-network-vaultid-quote-response-schema.json
-
 x-coverage:
   state: unreadable
   reason: js-rendered-docs
